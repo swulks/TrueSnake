@@ -1,0 +1,14 @@
+D:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Debug\TrueSnake.exe.config
+D:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Debug\TrueSnake.exe
+D:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Debug\TrueSnake.pdb
+D:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.csprojAssemblyReference.cache
+D:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.csproj.CoreCompileInputs.cache
+D:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.exe
+D:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.pdb
+E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Debug\TrueSnake.exe.config
+E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Debug\TrueSnake.exe
+E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Debug\TrueSnake.pdb
+E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.csprojAssemblyReference.cache
+E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.csproj.CoreCompileInputs.cache
+E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.exe
+E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Debug\TrueSnake.pdb
