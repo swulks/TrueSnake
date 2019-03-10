@@ -32,8 +32,10 @@ namespace TrueSnake
                 snake.SnakeLogic(food);
                 snakeField.Controls(snake);
                 snakeField.Draw(snake, food);
-
                 
+                //GUI added, for example
+               
+
                 Thread.Sleep(100);
             }
             GameOverScreen();
