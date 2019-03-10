@@ -33,18 +33,7 @@ namespace TrueSnake
                 snakeField.Controls(snake);
                 snakeField.Draw(snake, food);
 
-                //Test
-                foreach (Point snake in snake.SnakeBody)
-                {
-                    Console.WriteLine(snake.X + " ");
-
-                }
-                foreach (Point snake in snake.SnakeBody)
-                {
-     
-                    Console.WriteLine(snake.Y + " ");
-                }
-                //
+                
                 Thread.Sleep(100);
             }
             GameOverScreen();
