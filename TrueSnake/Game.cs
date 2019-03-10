@@ -34,7 +34,7 @@ namespace TrueSnake
                 snakeField.Draw(snake, food);
                 
                 //GUI added, for example
-               
+               //Added change
 
                 Thread.Sleep(100);
             }
