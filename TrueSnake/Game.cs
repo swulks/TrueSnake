@@ -35,7 +35,7 @@ namespace TrueSnake
                 
                 //GUI added, for example
                //Added change
-
+               //Some new changes
                 Thread.Sleep(100);
             }
             GameOverScreen();
