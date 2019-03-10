@@ -25,7 +25,7 @@ namespace TrueSnake
             SnakeBodyMovement();   
         }
 
-        private bool Collision(Point food)
+        private bool CollisionWhithFood(Point food)
         {
             if (SnakeBody[0].X == food.X && SnakeBody[0].Y == food.Y)
             {
@@ -44,33 +44,33 @@ namespace TrueSnake
                 if (SnakeBody[0].X == Field.Length - 1 || SnakeBody[0].X == 1 || //In classic mode when snake has colliding whith border, game is over
                     SnakeBody[0].Y == Field.Heigth - 1 || SnakeBody[0].Y == 1)
                 {
-                    Game.GameRun = false; // Game ends here
+                    Game.GameRun = false;
                     return collisionWhithItself;
                 }
             }
             else
             {
-                if (SnakeBody[0].X == Field.Length)
+                if (SnakeBody[0].X == Field.Length - 1)
                 {
-                    SnakeBody[0].X = 1;
+                    SnakeBody[0].X = 0;
                 }
                 else if (SnakeBody[0].X == 0)
                 {
                     SnakeBody[0].X = Field.Length - 1;
                 }
-                else if (SnakeBody[0].Y == Field.Heigth)
+                else if (SnakeBody[0].Y == Field.Heigth - 1)
                 {
-                    SnakeBody[0].Y = 1;
-                } 
+                    SnakeBody[0].Y = 0;
+                }
                 else if (SnakeBody[0].Y == 0)
                 {
-                    SnakeBody[0].Y = Field.Heigth - 1;
+                    SnakeBody[0].Y = Field.Heigth;
                 }
-               
+
             }
 
             //*Collision whith food;
-            if (Collision(food.FoodCoordinates))
+            if (CollisionWhithFood(food.FoodCoordinates))
             {
                 SnakeBody.Add( new Point(SnakeBody[0].X, SnakeBody[0].Y)); //If collide, add new point to the Snake's tail
                 Game.Score += 10;

@@ -32,7 +32,19 @@ namespace TrueSnake
                 snake.SnakeLogic(food);
                 snakeField.Controls(snake);
                 snakeField.Draw(snake, food);
-                
+
+                //Test
+                foreach (Point snake in snake.SnakeBody)
+                {
+                    Console.WriteLine(snake.X + " ");
+
+                }
+                foreach (Point snake in snake.SnakeBody)
+                {
+     
+                    Console.WriteLine(snake.Y + " ");
+                }
+                //
                 Thread.Sleep(100);
             }
             GameOverScreen();
@@ -40,45 +52,35 @@ namespace TrueSnake
 
         private void StartMenu()
         {
-            bool run = true;
-            while (run)
-            {
-                Console.Clear();
-                Console.WriteLine("1. Start \"Classic Snake\"");
-                Console.WriteLine("2. Start \"NoWalls Snake\"");
-                Console.WriteLine("3. Exit");
+            Console.WriteLine("1. Start \"Classic Snake\"");
+            Console.WriteLine("2. Start \"NoWalls Snake\"");
+            Console.WriteLine("3. Exit");
 
-                if (Console.KeyAvailable)
-                {
-                    keyInfo = Console.ReadKey();
-                }
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.D1:
-                        run = false;
-                        GameMode = Mode.CLASSIC;
-                        GameRun = true;         //Starts CLASSIC
-                        break;
-                    case ConsoleKey.D2:
-                        run = false;
-                        GameMode = Mode.NoWalls;//Starts NoWalls
-                        GameRun = true;
-                        break;
-                    case ConsoleKey.D3:
-                        run = false;            //Exit
-                        break;
-                }
-                Thread.Sleep(100);
+            keyInfo = Console.ReadKey();
+            
+
+            switch (keyInfo.Key)
+            {
+                case ConsoleKey.D1:
+                    GameMode = Mode.CLASSIC;
+                    GameRun = true;         //Starts CLASSIC
+                    break;
+                case ConsoleKey.D2:
+                    GameMode = Mode.NoWalls;//Starts NoWalls
+                    GameRun = true;
+                    break;
+                case ConsoleKey.D3:         //Exit
+                    break;
             }
         }
 
         public void GameOverScreen()
         {
-            Console.Clear();
+           
             Console.WriteLine("GAME OVER");
             Console.WriteLine("Your score is: " + Score);
 
-            //TODO
+            
             Console.ReadKey();
         }
 

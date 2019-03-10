@@ -7,8 +7,8 @@ namespace TrueSnake
         public static int Length { get; } = 20;
         public static int Heigth { get; } = 10;        
         ConsoleKeyInfo keyInfo;
-        bool upDown = true;
-        bool leftRight = false;
+        bool UpDown { get; set; } = true;
+        bool LeftRight { get; set; } = false;
         Key key;
 
         public void Draw(Snake snake, Food food)
@@ -23,18 +23,14 @@ namespace TrueSnake
                 for (int X = 0; X < Length; X++)
                 {
 
-                    if (Y == 0 || Y == Heigth - 1)
+                    if ((Y == 0 || Y == Heigth - 1) || (X == 0 || X == Length - 1))
                     {
                         Console.Write("#");
                     }
                     else if (food.FoodCoordinates.X == X && food.FoodCoordinates.Y== Y)
                     {
                         Console.Write("&");
-                    }
-                    else if (X == 0 || X == Length - 1)
-                    {
-                        Console.Write("#");
-                    }
+                    } 
                     else
                     {
                         for (int i = 0; i < snake.SnakeBody.Count; i++)
@@ -46,11 +42,9 @@ namespace TrueSnake
                                 //break;
                             }
                         }
-                        if (needPrint)
-                        {
-                            Console.Write(" ");
-                            
-                        }
+                        if (needPrint)   
+                            Console.Write(" ");    
+                        
                         needPrint = true;
                     }   
                 }
@@ -71,28 +65,28 @@ namespace TrueSnake
             {
              
                 case ConsoleKey.UpArrow:
-                    if (upDown)                    
+                    if (UpDown)                    
                         key = Key.UP;
-                    leftRight = true;
-                    upDown = false;
+                    LeftRight = true;
+                    UpDown = false;
                     break;
                 case ConsoleKey.DownArrow:
-                    if (upDown)
+                    if (UpDown)
                         key = Key.DOWN;
-                    leftRight = true;
-                    upDown = false;
+                    LeftRight = true;
+                    UpDown = false;
                     break;
                 case ConsoleKey.LeftArrow:
-                    if (leftRight)
+                    if (LeftRight)
                         key = Key.LEFT;
-                    leftRight = false;
-                    upDown = true;           
+                    LeftRight = false;
+                    UpDown = true;           
                     break;
                 case ConsoleKey.RightArrow:
-                    if (leftRight)
+                    if (LeftRight)
                         key = Key.RIGHT;
-                    upDown = true;
-                    leftRight = false;  
+                    UpDown = true;
+                    LeftRight = false;  
                     break;
                 default:
                     break;
@@ -101,16 +95,16 @@ namespace TrueSnake
             switch (key)
             {
                 case Key.UP:
-                    snake.SnakeBody[0].Y--;                   
+                    snake.SnakeBody[0].Y--;
                     break;
                 case Key.DOWN:
-                    snake.SnakeBody[0].Y++;                 
+                    snake.SnakeBody[0].Y++;
                     break;
                 case Key.LEFT:
-                    snake.SnakeBody[0].X--;               
+                    snake.SnakeBody[0].X--;
                     break;
                 case Key.RIGHT:
-                    snake.SnakeBody[0].X++;              
+                    snake.SnakeBody[0].X++;
                     break;
             }
         }
