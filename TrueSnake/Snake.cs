@@ -8,8 +8,10 @@ namespace TrueSnake
 
         public Snake()
         {
-            SnakeBody = new List<Point>();
-            SnakeBody.Add(new Point(10, 5));
+            SnakeBody = new List<Point>
+            {
+                new Point(10, 5)
+            };
 
         }
 

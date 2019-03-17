@@ -1,7 +1,14 @@
-E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Release\TrueSnake.exe.config
-E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Release\TrueSnake.exe
-E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\bin\Release\TrueSnake.pdb
-E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Release\TrueSnake.csproj.CoreCompileInputs.cache
-E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Release\TrueSnake.exe
-E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Release\TrueSnake.pdb
-E:\Работа\Visual CPP\Projects\TrueSnake\TrueSnake\obj\Release\TrueSnake.csprojAssemblyReference.cache
+E:/Работа/Visual CPP/Projects/TrueSnake/TrueSnake/bin/Release/TrueSnake.exe.config
+E:/Работа/Visual CPP/Projects/TrueSnake/TrueSnake/bin/Release/TrueSnake.exe
+E:/Работа/Visual CPP/Projects/TrueSnake/TrueSnake/bin/Release/TrueSnake.pdb
+E:/Работа/Visual CPP/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.csproj.CoreCompileInputs.cache
+E:/Работа/Visual CPP/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.exe
+E:/Работа/Visual CPP/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.pdb
+E:/Работа/Visual CPP/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.csprojAssemblyReference.cache
+/home/stig/Projects/TrueSnake/TrueSnake/bin/Release/TrueSnake.exe.config
+/home/stig/Projects/TrueSnake/TrueSnake/bin/Release/TrueSnake.exe
+/home/stig/Projects/TrueSnake/TrueSnake/bin/Release/TrueSnake.pdb
+/home/stig/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.csprojAssemblyReference.cache
+/home/stig/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.csproj.CoreCompileInputs.cache
+/home/stig/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.exe
+/home/stig/Projects/TrueSnake/TrueSnake/obj/Release/TrueSnake.pdb

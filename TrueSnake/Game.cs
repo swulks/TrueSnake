@@ -43,25 +43,33 @@ namespace TrueSnake
 
         private void StartMenu()
         {
+            bool run = true;
             Console.WriteLine("1. Start \"Classic Snake\"");
             Console.WriteLine("2. Start \"NoWalls Snake\"");
             Console.WriteLine("3. Exit");
 
-            keyInfo = Console.ReadKey();
-            
 
-            switch (keyInfo.Key)
+            keyInfo = Console.ReadKey();
+
+
+            while (run)
             {
-                case ConsoleKey.D1:
-                    GameMode = Mode.CLASSIC;
-                    GameRun = true;         //Starts CLASSIC
-                    break;
-                case ConsoleKey.D2:
-                    GameMode = Mode.NoWalls;//Starts NoWalls
-                    GameRun = true;
-                    break;
-                case ConsoleKey.D3:         //Exit
-                    break;
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.D1:
+                        GameMode = Mode.CLASSIC;
+                        GameRun = true;         //Starts CLASSIC
+                        run = false;
+                        break;
+                    case ConsoleKey.D2:
+                        GameMode = Mode.NoWalls;//Starts NoWalls
+                        run = false;
+                        GameRun = true;
+                        break;
+                    case ConsoleKey.D3:         //Exit
+                        run = false;
+                        break;
+                }
             }
         }
 
