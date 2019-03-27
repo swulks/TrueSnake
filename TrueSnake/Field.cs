@@ -60,12 +60,12 @@ namespace TrueSnake
             {
                 keyInfo = Console.ReadKey();
             }
-            
+
             switch (keyInfo.Key)
             {
-             
+
                 case ConsoleKey.UpArrow:
-                    if (UpDown)                    
+                    if (UpDown)
                         key = Key.UP;
                     LeftRight = true;
                     UpDown = false;
@@ -80,15 +80,13 @@ namespace TrueSnake
                     if (LeftRight)
                         key = Key.LEFT;
                     LeftRight = false;
-                    UpDown = true;           
+                    UpDown = true;
                     break;
                 case ConsoleKey.RightArrow:
                     if (LeftRight)
                         key = Key.RIGHT;
                     UpDown = true;
-                    LeftRight = false;  
-                    break;
-                default:
+                    LeftRight = false;
                     break;
             }
 
@@ -105,6 +103,8 @@ namespace TrueSnake
                     break;
                 case Key.RIGHT:
                     snake.SnakeBody[0].X++;
+                    break;
+                case Key.STOP:
                     break;
             }
         }
