@@ -13,14 +13,15 @@ namespace TrueSnake
         static Field snakeField;
         static Snake snake;
         static Food food;
-
+ 
+        
         public Game()
         {
             snakeField = new Field();
             snake = new Snake();
             food = new Food();
 
-            StartGame();
+             StartGame();
         }
 
         private void StartGame()
@@ -89,6 +90,6 @@ namespace TrueSnake
             NoWalls
         }
     }
-
+    
 
 }
