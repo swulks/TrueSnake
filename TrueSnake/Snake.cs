@@ -8,9 +8,10 @@ namespace TrueSnake
 
         public Snake()
         {
-            SnakeBody = new List<Point>();
-            SnakeBody.Add(new Point(10, 5));
-
+            SnakeBody = new List<Point>()
+            {
+                new Point(10,5)
+            };     
         }
 
         public void SnakeLogic(Food food)
@@ -50,21 +51,21 @@ namespace TrueSnake
             }
             else
             {
-                if (SnakeBody[0].X == Field.Length - 1)
+                if (SnakeBody[0].X > Field.Length - 2)
                 {
-                    SnakeBody[0].X = 0;
+                    SnakeBody[0].X = 1;
                 }
-                else if (SnakeBody[0].X == 0)
+                else if (SnakeBody[0].X < 1 )
                 {
-                    SnakeBody[0].X = Field.Length - 1;
+                    SnakeBody[0].X = Field.Length - 2;
                 }
-                else if (SnakeBody[0].Y == Field.Heigth - 1)
+                else if (SnakeBody[0].Y > Field.Heigth - 2)
                 {
-                    SnakeBody[0].Y = 0;
+                    SnakeBody[0].Y = 1;
                 }
-                else if (SnakeBody[0].Y == 0)
+                else if (SnakeBody[0].Y < 1)
                 {
-                    SnakeBody[0].Y = Field.Heigth;
+                    SnakeBody[0].Y = Field.Heigth - 2;
                 }
 
             }

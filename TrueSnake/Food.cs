@@ -15,11 +15,18 @@ namespace TrueSnake
         public void SpawnFood()
         {
             Random randomNum = new Random();
+
             int tempX = FoodCoordinates.X;
             int tempY = FoodCoordinates.Y;
+            
 
-            FoodCoordinates.X = randomNum.Next(3, 17);
-            FoodCoordinates.Y = randomNum.Next(2, 8);
+            while (tempX == FoodCoordinates.X && tempY == FoodCoordinates.Y)
+            {
+                tempX = randomNum.Next(3, 17);
+                tempY = randomNum.Next(2, 8);
+            }
+            FoodCoordinates.X = tempY;
+            FoodCoordinates.Y = tempY;
         }
     }
 }
