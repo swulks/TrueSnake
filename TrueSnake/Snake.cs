@@ -41,8 +41,9 @@ namespace TrueSnake
 
             //*Game mods
             if (Game.GameMode == Game.Mode.CLASSIC)
-            {
-                if (SnakeBody[0].X == Field.Length - 1 || SnakeBody[0].X == 1 || //In classic mode when snake has colliding whith border, game is over
+            {   
+                //In classic mode when snake has colliding whith border, game is over
+                if (SnakeBody[0].X == Field.Length - 1 || SnakeBody[0].X == 1 || 
                     SnakeBody[0].Y == Field.Heigth - 1 || SnakeBody[0].Y == 1)
                 {
                     Game.GameRun = false;
@@ -50,7 +51,7 @@ namespace TrueSnake
                 }
             }
             else
-            {
+            {   //In "no walls" mode if snake head collide whith border, her head "jumps" to the opposite border
                 if (SnakeBody[0].X > Field.Length - 2)
                 {
                     SnakeBody[0].X = 1;
