@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace TrueSnake
 {
@@ -27,16 +28,19 @@ namespace TrueSnake
         private void StartGame()
         {
             StartMenu();
-   
+
             while (GameRun)
             {
-                snake.SnakeLogic(food);
-                snakeField.Controls(snake);
-                snakeField.Draw(snake, food);
-                
+                Task task1 = Task.Run(() => snake.SnakeLogic(food));
+
+                //snake.SnakeLogic(food);
+                Task task2 = Task.Run(() => snakeField.Controls(snake));
+                Task task3 = Task.Run(() => snakeField.Draw(snake, food));
+                //snakeField.Draw(snake, food);
+
                 //GUI added, for example
-               //Added change
-               //Some new changes
+                //Added change
+                //Some new changes
                 Thread.Sleep(100);
             }
             GameOverScreen();
