@@ -31,12 +31,9 @@ namespace TrueSnake
 
             while (GameRun)
             {
-                Task task1 = Task.Run(() => snake.SnakeLogic(food));
-
-                //snake.SnakeLogic(food);
-                snakeField.Controls(snake);
+                Task task1 = Task.Run(() => snake.SnakeLogic(food)); 
+                snakeField.Controls(snake);            
                 Task task3 = Task.Run(() => snakeField.Draw(snake, food));
-                //snakeField.Draw(snake, food);
 
                 //GUI added, for example
                 //Added change
