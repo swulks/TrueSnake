@@ -34,7 +34,7 @@ namespace TrueSnake
                 Task task1 = Task.Run(() => snake.SnakeLogic(food));
 
                 //snake.SnakeLogic(food);
-                Task task2 = Task.Run(() => snakeField.Controls(snake));
+                snakeField.Controls(snake);
                 Task task3 = Task.Run(() => snakeField.Draw(snake, food));
                 //snakeField.Draw(snake, food);
 
