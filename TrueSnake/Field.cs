@@ -4,8 +4,8 @@ namespace TrueSnake
 {
      class Field
     {
-        public static int Length { get; } = 20;
-        public static int Heigth { get; } = 10;        
+        public static int Length { get; } = 40;
+        public static int Heigth { get; } = 20;        
         ConsoleKeyInfo keyInfo;
         bool UpDown { get; set; } = true;
         bool LeftRight { get; set; } = false;

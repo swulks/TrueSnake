@@ -95,6 +95,7 @@ namespace TrueSnake
                         //If snake's head collide whith body,
                         //set the colllision flag on true
                         collisionWhithItself = true;
+                        Game.CollisionWithItself = true;
                         break;
                     }
                 }

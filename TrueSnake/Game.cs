@@ -10,6 +10,7 @@ namespace TrueSnake
         public static Mode GameMode;
         public static int Score { get; set; }
         static ConsoleKeyInfo keyInfo;
+        public static bool CollisionWithItself { get; set; }
 
         static Field snakeField;
         static Snake snake;
@@ -30,10 +31,12 @@ namespace TrueSnake
             StartMenu();
 
             while (GameRun)
-            {
-                Task task1 = Task.Run(() => snake.SnakeLogic(food)); 
-                snakeField.Controls(snake);            
-                Task task3 = Task.Run(() => snakeField.Draw(snake, food));
+            {   
+                //task1
+                Task logic = Task.Run(() => snake.SnakeLogic(food));
+                snakeField.Controls(snake);
+                //task2
+                Task draw = Task.Run(() => snakeField.Draw(snake, food));
 
                 //GUI added, for example
                 //Added change
@@ -59,16 +62,19 @@ namespace TrueSnake
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.D1:
-                        GameMode = Mode.CLASSIC;
-                        GameRun = true;         //Starts CLASSIC
+                        // Starts CLASSIC
+                         GameMode = Mode.CLASSIC;
+                        GameRun = true;                                
                         run = false;
                         break;
                     case ConsoleKey.D2:
-                        GameMode = Mode.NoWalls;//Starts NoWalls
+                        //Starts NoWalls
+                        GameMode = Mode.NO_WALLS;                        
                         run = false;
                         GameRun = true;
                         break;
-                    case ConsoleKey.D3:         //Exit
+                    case ConsoleKey.D3:         
+                        //Exit
                         run = false;
                         break;
                 }
@@ -79,16 +85,18 @@ namespace TrueSnake
         {
            
             Console.WriteLine("GAME OVER");
-            Console.WriteLine("Your score is: " + Score);
-
-            
+            if (CollisionWithItself == true)
+            {
+                Console.WriteLine("You have been collided whith your body!");
+            }
+            Console.WriteLine("Your score is: " + Score);     
             Console.ReadKey();
         }
 
         public enum Mode
         {
             CLASSIC = 0,
-            NoWalls
+            NO_WALLS
         }
     }
     
