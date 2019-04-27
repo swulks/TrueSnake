@@ -4,6 +4,9 @@ namespace TrueSnake
 {
     class Snake
     {
+        /// <summary>
+        /// List that stores points of the snake's body
+        /// </summary>
         public List<Point> SnakeBody { get; set; }
 
         public Snake()
@@ -14,11 +17,14 @@ namespace TrueSnake
             };     
         }
 
+        /// <summary>
+        /// Snake's logic method
+        /// </summary>
+        /// <param name="food"></param>
         public void SnakeLogic(Food food)
         {
-           
-
-            if (CollisionsCheck(food)) // That method returns true if head is colliding whith itself
+            // Returns true if head is colliding whith itself
+            if (CollisionsCheck(food)) 
             {
                 Game.GameRun = false;
                 return;
@@ -26,6 +32,11 @@ namespace TrueSnake
             SnakeBodyMovement();   
         }
 
+        /// <summary>
+        /// Check collision with food
+        /// </summary>
+        /// <param name="food"></param>
+        /// <returns></returns>
         private bool CollisionWhithFood(Point food)
         {
             if (SnakeBody[0].X == food.X && SnakeBody[0].Y == food.Y)
@@ -35,6 +46,11 @@ namespace TrueSnake
             return false;
         }
 
+        /// <summary>
+        /// Check collisions
+        /// </summary>
+        /// <param name="food"></param>
+        /// <returns></returns>
         private bool CollisionsCheck(Food food)
         {
             bool collisionWhithItself = false;
@@ -71,19 +87,18 @@ namespace TrueSnake
 
             }
 
-            //*Collision whith food;
+            //Collision whith food;
             if (CollisionWhithFood(food.FoodCoordinates))
             {
-                SnakeBody.Add( new Point(SnakeBody[0].X, SnakeBody[0].Y)); //If collide, add new point to the Snake's tail
+                SnakeBody.Add( new Point(SnakeBody[SnakeBody.Count - 1].X, SnakeBody[SnakeBody.Count - 1].Y)); //If collide, add new point to the Snake's tail
                 Game.Score += 10;
                 food.SpawnFood();
                 
                 return collisionWhithItself;
             }
 
-            //*Collision whith itself;
-            //We need to check collisions whith itself only if snake's body length 
-            //is higher than 3
+            //Collision whith itself;
+            //Check collisions whith itself only if snake's body length is higher than 3     
             if (SnakeBody.Count > 3)
             {
                 int snakeHeadX = SnakeBody[0].X;
@@ -104,9 +119,12 @@ namespace TrueSnake
             return collisionWhithItself;
         }
 
+        /// <summary>
+        /// Snake's body movement
+        /// </summary>
         private void SnakeBodyMovement()
         {
-            //First set snake's head in a temp variable.
+            //First set snake's head in a temporal variable.
             int tempHeadX = SnakeBody[0].X;
             int tempHeadY = SnakeBody[0].Y;
 
@@ -122,7 +140,7 @@ namespace TrueSnake
                 SnakeBody[i + 1].Y = tempHeadY;
 
                 //Save current snake's tail possition in "head" for further work whit it (in the next loop itteration 
-                //"tail" will be "head". 
+                //"tail" will be "head"). 
                 tempHeadX = tempTailX;
                 tempHeadY = tempTailY;
 

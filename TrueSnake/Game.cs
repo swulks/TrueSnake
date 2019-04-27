@@ -6,33 +6,54 @@ namespace TrueSnake
 {
     public class Game
     {
+        /// <summary>
+        /// Game status
+        /// </summary>
         public static bool GameRun { get; set; } = false;
+
+        /// <summary>
+        /// Game mode
+        /// </summary>
         public static Mode GameMode;
+
+        /// <summary>
+        /// Game score
+        /// </summary>
         public static int Score { get; set; }
+
+        /// <summary>
+        /// Stores key info of the pressed key
+        /// </summary>
         static ConsoleKeyInfo keyInfo;
+
+        /// <summary>
+        /// Checks if snake collide whith itself
+        /// </summary>
         public static bool CollisionWithItself { get; set; }
 
         static Field snakeField;
         static Snake snake;
         static Food food;
- 
-        
+         
         public Game()
         {
             snakeField = new Field();
             snake = new Snake();
             food = new Food();
 
-             StartGame();
+            StartGame();
         }
 
+        /// <summary>
+        /// Method that starts the game
+        /// </summary>
         private void StartGame()
         {
             StartMenu();
 
             while (GameRun)
             {   
-                //task1
+                
                 Task logic = Task.Run(() => snake.SnakeLogic(food));
                 snakeField.Controls(snake);
                 //task2
@@ -46,6 +67,9 @@ namespace TrueSnake
             GameOverScreen();
         }
 
+        /// <summary>
+        /// Shows the start menu of the game
+        /// </summary>
         private void StartMenu()
         {
             bool run = true;
@@ -81,7 +105,10 @@ namespace TrueSnake
             }
         }
 
-        public void GameOverScreen()
+        /// <summary>
+        /// Shows the "Game over" screen
+        /// </summary>
+        private void GameOverScreen()
         {
            
             Console.WriteLine("GAME OVER");
@@ -98,7 +125,5 @@ namespace TrueSnake
             CLASSIC = 0,
             NO_WALLS
         }
-    }
-    
-
+    }   
 }

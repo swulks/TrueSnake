@@ -3,7 +3,7 @@
 
 namespace TrueSnake
 {
-    class Program
+    class StartGame
     {
         static void Main(string[] args)
         {            

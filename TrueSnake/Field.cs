@@ -2,15 +2,46 @@
 
 namespace TrueSnake
 {
+    /// <summary>
+    /// Class that draws game on the console
+    /// </summary>
      class Field
     {
+        /// <summary>
+        /// Length of the field
+        /// </summary>
         public static int Length { get; } = 40;
-        public static int Heigth { get; } = 20;        
+
+        /// <summary>
+        /// Heigth of the field
+        /// </summary>
+        public static int Heigth { get; } = 20;
+        
+        /// <summary>
+        /// Key info to store the pressed key
+        /// </summary>
         ConsoleKeyInfo keyInfo;
+
+        /// <summary>
+        /// Checks if snake direction is up or down
+        /// </summary>
         bool UpDown { get; set; } = true;
+
+        /// <summary>
+        /// Checks if the snake direction is left or rigth
+        /// </summary>
         bool LeftRight { get; set; } = false;
+
+        /// <summary>
+        /// Variable to store the key
+        /// </summary>
         Key key;
 
+        /// <summary>
+        /// Draw method that draws the main game on the console  
+        /// </summary>
+        /// <param name="snake"></param>
+        /// <param name="food"></param>
         public void Draw(Snake snake, Food food)
         {
             Console.Clear();
@@ -53,6 +84,10 @@ namespace TrueSnake
             }
         }
 
+        /// <summary>
+        /// Method that is responsible for controls
+        /// </summary>
+        /// <param name="snake"></param>
         public void Controls(Snake snake)
         {
             
